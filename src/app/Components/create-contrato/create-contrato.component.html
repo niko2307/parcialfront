@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="form-wrapper">
+      <h2>Crear Contrato</h2>
+  
+      <!-- Mensaje de éxito -->
+      <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+      </div>
+  
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+  
+      <!-- Formulario -->
+      <form [formGroup]="contratoForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="valor">Valor</label>
+          <input id="valor" type="number" formControlName="valor" />
+        </div>
+  
+        <div>
+          <label for="nombreContratante">Nombre Contratante</label>
+          <input id="nombreContratante" type="text" formControlName="nombreContratante" />
+        </div>
+  
+        <div>
+          <label for="documentoContratante">Documento Contratante</label>
+          <input id="documentoContratante" type="text" formControlName="documentoContratante" />
+        </div>
+  
+        <div>
+          <label for="nombreContratantista">Nombre Contratantista</label>
+          <input id="nombreContratantista" type="text" formControlName="nombreContratantista" />
+        </div>
+  
+        <div>
+          <label for="documentoContratantista">Documento Contratantista</label>
+          <input id="documentoContratantista" type="text" formControlName="documentoContratantista" />
+        </div>
+  
+        <div>
+          <label for="fechaInicial">Fecha Inicial</label>
+          <input id="fechaInicial" type="date" formControlName="fechaInicial" />
+        </div>
+  
+        <div>
+          <label for="fechaFinal">Fecha Final</label>
+          <input id="fechaFinal" type="date" formControlName="fechaFinal" />
+        </div>
+  
+        <div>
+          <label for="estado">Estado</label>
+          <select id="estado" formControlName="estado">
+            <option value="ACTIVO">ACTIVO</option>
+            <option value="INACTIVO">INACTIVO</option>
+            <option value="CANCELADO">CANCELADO</option>
+          </select>
+        </div>
+  
+        <button type="submit">Crear Contrato</button>
+      </form>
+    </div>
+  </div>
+  

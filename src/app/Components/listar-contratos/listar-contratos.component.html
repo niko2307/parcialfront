@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Lista de Contratos</h2>
+  
+    <!-- Mostrar mensaje de error -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Tabla con los contratos -->
+    <table *ngIf="contratos.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Valor</th>
+          <th>Contratante</th>
+          <th>Documento Contratante</th>
+          <th>Contratantista</th>
+          <th>Documento Contratantista</th>
+          <th>Fecha Inicial</th>
+          <th>Fecha Final</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contrato of contratos">
+          <td>{{ contrato.id }}</td>
+          <td>{{ contrato.valor }}</td>
+          <td>{{ contrato.nombreContratante }}</td>
+          <td>{{ contrato.documentoContratante }}</td>
+          <td>{{ contrato.nombreContratantista }}</td>
+          <td>{{ contrato.documentoContratantista }}</td>
+          <td>{{ contrato.fechaInicial }}</td>
+          <td>{{ contrato.fechaFinal }}</td>
+          <td>{{ contrato.estado }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Mensaje cuando no hay contratos -->
+    <div *ngIf="contratos.length === 0 && !errorMessage">
+      <p>No hay contratos registrados.</p>
+    </div>
+  </div>
+  
